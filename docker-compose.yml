@@ -23,6 +23,14 @@ services:
     ports:
       - "8082:80"
 
+  serverC:
+    image: httpd:latest
+    container_name: fail-over-project-serverC-1
+    volumes:
+      - ./serverC:/usr/local/apache2/htdocs/
+    ports:
+      - "8083:80"
+
   prometheus:
     image: prom/prometheus
     volumes:
